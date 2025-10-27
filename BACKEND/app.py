@@ -16,7 +16,7 @@ CORS(
 # --- SESSION CONFIG ---
 app.config['SESSION_COOKIE_SAMESITE'] = 'None'
 app.config['SESSION_COOKIE_SECURE'] = False  # False for local dev
-app.config.from_object('config.Config')
+app.config.from_object('BACKEND.config.Config')
 db.init_app(app)
 
 # --- REGISTER BLUEPRINTS ---
