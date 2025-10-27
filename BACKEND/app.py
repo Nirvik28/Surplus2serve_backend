@@ -9,9 +9,9 @@ app = Flask(__name__)
 # --- CORS CONFIG ---
 CORS(
     app,
-    origins=["http://127.0.0.1:3000", "http://localhost:3000"],
+    origins=["https://majestic-otter-fc2406.netlify.app", "http://localhost:3000"],
     supports_credentials=True
-)
+ )
 
 # --- SESSION CONFIG ---
 app.config['SESSION_COOKIE_SAMESITE'] = 'None'
