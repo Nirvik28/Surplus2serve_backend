@@ -1,0 +1,35 @@
+from flask import Flask
+from db import db
+from routes import auth, food, delivery
+from routes.recommendation import bp as rec_bp
+from flask_cors import CORS
+
+app = Flask(__name__)
+
+# --- CORS CONFIG ---
+CORS(
+    app,
+    origins=["http://127.0.0.1:3000", "http://localhost:3000"],
+    supports_credentials=True
+)
+
+# --- SESSION CONFIG ---
+app.config['SESSION_COOKIE_SAMESITE'] = 'None'
+app.config['SESSION_COOKIE_SECURE'] = False  # False for local dev
+app.config.from_object('config.Config')
+db.init_app(app)
+
+# --- REGISTER BLUEPRINTS ---
+app.register_blueprint(auth.bp, url_prefix='/api/auth')
+app.register_blueprint(food.bp, url_prefix='/api/food')
+app.register_blueprint(delivery.bp, url_prefix='/api/delivery')
+app.register_blueprint(rec_bp, url_prefix="/api/recommendation")  # endpoint: /api/recommendation  # final endpoint: /api/chat
+
+@app.route('/')
+def index():
+    return {'message': 'Surplus2Serve Backend API'}
+
+if __name__ == '__main__':
+    with app.app_context():
+        db.create_all()
+    app.run(host='0.0.0.0', port=5000, debug=True)
