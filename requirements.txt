@@ -3,3 +3,5 @@ Flask-SQLAlchemy
 Werkzeug
 gunicorn
 requests
+flask-cors
+python-dotenv
