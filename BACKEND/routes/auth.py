@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify, session
-from models import User
+from BACKEND.models import User
 from BACKEND.db import db
 
 
