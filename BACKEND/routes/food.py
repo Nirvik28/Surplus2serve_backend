@@ -1,6 +1,7 @@
 from flask import Blueprint, request, jsonify, session
 from models import FoodPost, User
-from db import db
+from BACKEND.db import db
+
 
 bp = Blueprint('food', __name__)  # FIXED _name_ -> __name__
 

@@ -1,5 +1,5 @@
 from flask import Flask
-from db import db
+from BACKEND.db import db
 from routes import auth, food, delivery
 from routes.recommendation import bp as rec_bp
 from flask_cors import CORS

@@ -1,6 +1,7 @@
 from flask import Blueprint, request, jsonify, session
 from models import User
-from db import db
+from BACKEND.db import db
+
 
 bp = Blueprint('auth', __name__)  # FIXED _name_ -> __name__
 
