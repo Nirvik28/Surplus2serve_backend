@@ -7,11 +7,12 @@ from flask_cors import CORS
 app = Flask(__name__)
 
 # --- CORS CONFIG ---
-CORS(
-    app,
-    origins=["https://fluffy-sunburst-b93ddd.netlify.app", "http://localhost:3000"],
-    supports_credentials=True
- )
+CORS(app, origins="*", supports_credentials=True)
+#CORS(
+ #   app,
+  #  origins=["https://fluffy-sunburst-b93ddd.netlify.app", "http://localhost:3000"],
+   # supports_credentials=True
+ #)
 
 # --- SESSION CONFIG ---
 app.config['SESSION_COOKIE_SAMESITE'] = 'None'
