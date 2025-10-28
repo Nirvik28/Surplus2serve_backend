@@ -9,7 +9,7 @@ app = Flask(__name__)
 # --- CORS CONFIG ---
 CORS(
     app,
-    origins=["https://majestic-otter-fc2406.netlify.app", "http://localhost:3000"],
+    origins=["https://fluffy-sunburst-b93ddd.netlify.app", "http://localhost:3000"],
     supports_credentials=True
  )
 
